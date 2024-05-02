@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   database:
-    image: 'mariadb/11.3.2'
+    image: 'mariadb:11.3.2'
     container_name: 'database'
     environment:
       - MYSQL_USER=user
@@ -11,4 +11,4 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "./docker/dbinit:docker-entrypoint-initdb.d"
+      - ".docker/dbInit:/docker-entrypoint-initdb.d"
